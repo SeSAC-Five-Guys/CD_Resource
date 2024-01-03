@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sesac-fice-guys-svc
+spec:
+  selector:
+    app: sesac-fice-guys-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sesac-fice-guys-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sesac-fice-guys-service
+  template:
+    metadata:
+      labels:
+        app: sesac-fice-guys-service
+    spec:
+      containers:
+        - name: sesac-fice-guys-service
+          image: Member_Write/member_wirte:latest
