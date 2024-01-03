@@ -1,3 +1,4 @@
+#curator and cronjob
 apiVersion: v1
 kind: ConfigMap
 metadata:
