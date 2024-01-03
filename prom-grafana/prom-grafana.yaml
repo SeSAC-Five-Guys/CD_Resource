@@ -1083,7 +1083,7 @@ grafana:
 
   ## Passed to grafana subchart and used by servicemonitor below
   ##
-  #type nodeport 변경
+  #type nodeport 변경 
   service:
     portName: http-web
     type: NodePort
