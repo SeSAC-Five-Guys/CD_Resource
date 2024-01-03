@@ -72,7 +72,7 @@ podLabels: {}
 ##
 annotations: {}
 
-## Set field schema as HTTPS for readines and liveness probe
+## Set field schema as HTTPS for readines and liveness probe 
 ##
 probes:
   useHttpsScheme: false
