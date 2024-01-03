@@ -1776,7 +1776,7 @@ zookeeper:
   ##
   auth:
     client:
-      ## @param zookeeper.auth.client.enabled Enable ZooKeeper auth
+      ## @param zookeeper.auth.client.enabled Enable ZooKeeper auth 
       ##
       enabled: false
       ## @param zookeeper.auth.client.clientUser User that will use ZooKeeper clients to auth
