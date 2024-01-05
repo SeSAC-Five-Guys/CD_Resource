@@ -2,31 +2,31 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sesac-five-guys-svc
+  name: auth-server-svc
 spec:
   selector:
-    app: sesac-five-guys-service
+    app: auth-server
   ports:
     - name: http
       protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8083
+      targetPort: 8083
   type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sesac-five-guys-deployment
+  name: auth-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sesac-five-guys-service
+      app: auth-server
   template:
     metadata:
       labels:
-        app: sesac-five-guys-service
+        app: auth-server
     spec:
       containers:
-        - name: sesac-five-guys-service
+        - name: auth-server
           image: Auth_Server/auth_server:latest
