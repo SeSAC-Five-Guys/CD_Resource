@@ -1,0 +1,32 @@
+# Member_Read_start
+apiVersion: v1
+kind: Service
+metadata:
+  name: sesac-five-guys-svc
+spec:
+  selector:
+    app: sesac-five-guys-service
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sesac-five-guys-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sesac-five-guys-service
+  template:
+    metadata:
+      labels:
+        app: sesac-five-guys-service
+    spec:
+      containers:
+        - name: sesac-fice-guys-service
+          image: Member_Read/member_read:latest
