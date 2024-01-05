@@ -8,10 +8,10 @@ spec:
     app: member-write
   ports:
     - name: http
-      protocol: TCP
       port: 8081
       targetPort: 8081
-  type: LoadBalancer
+      nodePort: 30081
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -29,4 +29,4 @@ spec:
     spec:
       containers:
         - name: member-write
-          image: Member_Write/member_wirte:latest
+          image: leehb97/member_wirte:latest
