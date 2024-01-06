@@ -31,3 +31,5 @@ spec:
       containers:
         - name: member-write
           image: leehb97/member_write:latest
+          ports:
+            - containerPort: 8080
