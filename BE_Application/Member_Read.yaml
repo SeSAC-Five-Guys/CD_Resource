@@ -32,4 +32,5 @@ spec:
         - name: member-read
           image: leehb97/member_read:latest
           ports:
-            - containerPort: 8082
+            - protocol: TCP
+              containerPort: 8082
