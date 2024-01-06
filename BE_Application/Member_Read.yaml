@@ -31,3 +31,5 @@ spec:
       containers:
         - name: member-read
           image: leehb97/member_read:latest
+          ports:
+            - containerPort: 8080
