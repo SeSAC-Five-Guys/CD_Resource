@@ -31,3 +31,5 @@ spec:
       containers:
         - name: auth-server
           image: leehb97/auth_server:latest
+          ports:
+            - containerPort: 8083
