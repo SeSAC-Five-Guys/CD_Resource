@@ -29,4 +29,4 @@ spec:
     spec:
       containers:
         - name: member-write
-          image: leehb97/member_wirte:latest
+          image: leehb97/member_write:latest
