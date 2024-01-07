@@ -16,7 +16,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: member-read
+  name: member-read-deployment
 spec:
   replicas: 1
   selector:
