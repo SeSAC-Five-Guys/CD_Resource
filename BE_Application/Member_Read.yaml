@@ -1,4 +1,4 @@
-# Member_Read_6fac5b3da5fb173134e7ecc0ff9ec20566f49945
+# Member_Read_140d2145b8a9512a170479e01b257ca7fd6c36fb
 apiVersion: v1
 kind: Service
 metadata:
@@ -8,6 +8,7 @@ spec:
     app: member-read
   ports:
     - name: http
+      protocol: TCP
       port: 8082
       targetPort: 8082
       nodePort: 30082
@@ -30,3 +31,6 @@ spec:
       containers:
         - name: member-read
           image: leehb97/member_read:latest
+          ports:
+            - protocol: TCP
+              containerPort: 8082

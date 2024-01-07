@@ -1,4 +1,4 @@
-# Auth_Server_a108ca5fc3689135ede174d0d668531d5a0e4963
+# Auth_Server_6032d23ba7d94f1f8a6acc76076d6a66a7a897de
 apiVersion: v1
 kind: Service
 metadata:
@@ -8,6 +8,7 @@ spec:
     app: auth-server
   ports:
     - name: http
+      protocol: TCP
       port: 8083
       targetPort: 8083
       nodePort: 30083
@@ -30,3 +31,6 @@ spec:
       containers:
         - name: auth-server
           image: leehb97/auth_server:latest
+          ports:
+            - protocol: TCP
+              containerPort: 8083
