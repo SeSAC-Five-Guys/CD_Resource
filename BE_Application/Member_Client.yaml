@@ -1,0 +1,34 @@
+# Member_Client_start
+apiVersion: v1
+kind: Service
+metadata:
+  name: member-client-svc
+spec:
+  selector:
+    app: member-client
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: member-client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: member-client
+  template:
+    metadata:
+      labels:
+        app: member-client
+    spec:
+      containers:
+        - name: member-client
+          image: leehb97/member_client:latest
+          ports:
+            - protocol: TCP
+              containerPort: 80
