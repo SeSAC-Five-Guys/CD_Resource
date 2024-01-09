@@ -1,4 +1,4 @@
-# Auth_Server_fb7e1523b21d66d882a628151e8575219c83c767
+# Auth_Server_41d98d3377903670e97ca0659b58483e1565dce8
 apiVersion: v1
 kind: Service
 metadata:
